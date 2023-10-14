@@ -8,8 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.micrometer.core.ipc.http.HttpSender.Response;
-import lombok.experimental.var;
+import at.favre.lib.crypto.bcrypt.BCrypt;
 
 /*
  * Modificador
@@ -27,7 +26,7 @@ public class UserController {
 
     @PostMapping("/")
     public ResponseEntity create(@RequestBody UserModel userModel) {
-        var user = this.userRepository.findByUsername(userModel.getUsername());
+        lombok.var user = this.userRepository.findByUsername(userModel.getUsername());
 
         if (user != null) {
             // Mensagem de Erro
@@ -35,7 +34,12 @@ public class UserController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Usuário já existe");
         }
 
-        var userCreated = this.userRepository.save(userModel);
+        lombok.var passwordHashred = BCrypt.withDefaults()
+        .hashToString(12, userModel.getPassword().toCharArray());
+
+        userModel.setPassword(passwordHashred);
+
+        lombok.var userCreated = this.userRepository.save(userModel);
         return ResponseEntity.status(HttpStatus.CREATED).body(userCreated);
     }
     
