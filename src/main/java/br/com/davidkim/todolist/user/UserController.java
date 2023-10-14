@@ -6,8 +6,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import lombok.experimental.var;
-
 /*
  * Modificador
  * public
@@ -24,7 +22,15 @@ public class UserController {
 
     @PostMapping("/")
     public UserModel create(@RequestBody UserModel userModel) {
-        var userCreated = this.userRepository.save(userModel);
+
+        lombok.var user = this.userRepository.findByUsername(userModel.getUsername());
+
+        if(user != null) {
+            System.out.println("Usuário já Existe");
+            return null;
+        }
+
+        lombok.var userCreated = this.userRepository.save(userModel);
         return userCreated;
     }
     
