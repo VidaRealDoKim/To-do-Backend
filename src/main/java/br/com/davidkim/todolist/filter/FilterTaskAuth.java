@@ -25,8 +25,8 @@ public class FilterTaskAuth extends OncePerRequestFilter {
             throws ServletException, IOException {
 
         var servletPath = request.getServletPath();
-
-        if (servletPath.equals("/tasks/")) {
+        System.out.println("PATH " + servletPath);
+        if (servletPath.startsWith("/tasks/")) {
 
             // pegar a autenticacao (usuario e senha)
             var authorization = request.getHeader("Authorization");
@@ -56,12 +56,11 @@ public class FilterTaskAuth extends OncePerRequestFilter {
                 } else {
                     response.sendError(401);
                 }
-                
 
             }
 
         } else {
-             filterChain.doFilter(request, response);
+            filterChain.doFilter(request, response);
         }
 
     }
