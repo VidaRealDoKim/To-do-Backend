@@ -11,23 +11,23 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import lombok.Data;
 
- /*
-     * ID
-     * usuario (ID_USUARIO)
-     * descricao
-     * titulo
-     * data de inicio
-     * data de termino
-     * prioridade
-     * 
-     */
+/*
+    * ID
+    * usuario (ID_USUARIO)
+    * descricao
+    * titulo
+    * data de inicio
+    * data de termino
+    * prioridade
+    * 
+    */
 
 @Data
 @Entity(name = "tb_tasks")
 public class TaskModel {
 
     @Id
-    @GeneratedValue (generator = "UUID")
+    @GeneratedValue(generator = "UUID")
     private UUID id;
     private String description;
 
@@ -38,10 +38,8 @@ public class TaskModel {
     private String priority;
 
     private UUID idUser;
-    
+
     @CreationTimestamp
     private LocalDateTime createdAt;
 
-   
-   
 }

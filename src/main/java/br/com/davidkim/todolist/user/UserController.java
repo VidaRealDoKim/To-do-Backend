@@ -20,7 +20,7 @@ import at.favre.lib.crypto.bcrypt.BCrypt;
 @RestController
 @RequestMapping("/users")
 public class UserController {
-    
+
     @Autowired
     private IUserRepositor userRepository;
 
@@ -35,12 +35,12 @@ public class UserController {
         }
 
         lombok.var passwordHashred = BCrypt.withDefaults()
-        .hashToString(12, userModel.getPassword().toCharArray());
+                .hashToString(12, userModel.getPassword().toCharArray());
 
         userModel.setPassword(passwordHashred);
 
         lombok.var userCreated = this.userRepository.save(userModel);
         return ResponseEntity.status(HttpStatus.CREATED).body(userCreated);
     }
-    
+
 }
