@@ -1,45 +1,51 @@
-# ✅ To-do Backend - Java
+# ✅ To-do API - Projeto Back-End em Java (Evento Rocketseat)
 
-Projeto backend de uma aplicação **To-do List**, desenvolvido em **Java** durante o curso gratuito da [Rocketseat](https://www.rocketseat.com.br/).
+Este projeto foi desenvolvido durante um **evento gratuito da Rocketseat**, com foco no desenvolvimento de uma **API RESTful** para uma aplicação To-do List, utilizando **Java + Spring Boot**.
 
-> 🚀 Desenvolvimento de uma aplicação back-end em Java; Maven; Spring Boot; API Rest; Lombok; Integração com H2 Database Engine; Implementando segurança nos dados do usuário; Tratamento de Exceções e Deploy do back-end.
-
----
-
-## 🛠️ Tecnologias Utilizadas
-
-- ☕ **Java 17+**
-- 🌐 **Spring Boot**
-- 🛢️ **JPA / Hibernate**
-- 🐘 **PostgreSQL** (ou outro banco relacional)
-- 🔄 **Spring Data JPA**
-- 🧪 **JUnit** (para testes unitários, se aplicável)
+> Uma experiência prática, imersiva e guiada que abordou desde a criação do projeto até o deploy de uma aplicação funcional de back-end.
 
 ---
 
-## 📌 Funcionalidades
+## 🎯 Sobre o Evento
 
-- Criar uma nova tarefa (`POST /tasks`)
-- Listar todas as tarefas (`GET /tasks`)
-- Atualizar uma tarefa (`PUT /tasks/{id}`)
-- Deletar uma tarefa (`DELETE /tasks/{id}`)
-- Marcar como concluída (`PATCH /tasks/{id}/complete`)
+- 🧑‍🏫 **Organizador:** Rocketseat  
+- 📅 **Formato:** Online e gratuito  
+- 🛠️ **Tema:** Construção de uma API To-do com Java e Spring Boot  
+- 📍 **Conteúdo prático:** Do zero ao deploy
 
 ---
 
-## ▶️ Como rodar localmente
+## 🧠 O que foi desenvolvido
+
+- API REST completa com **CRUD de tarefas**
+- Estrutura modular e bem organizada com **Java + Spring Boot**
+- Uso do **Maven** como gerenciador de dependências
+- Integração com **H2 Database Engine** (em memória)
+- Aplicação de **boas práticas com DTOs e validações**
+- **Tratamento de exceções** global com `@ControllerAdvice`
+- Deploy para nuvem de forma simples e funcional
+
+---
+
+## ⚙️ Tecnologias Utilizadas
+
+| Tecnologia     | Descrição                                 |
+|----------------|-------------------------------------------|
+| ☕ Java 17+     | Linguagem principal                       |
+| 🌱 Spring Boot | Framework de desenvolvimento web          |
+| 🐘 H2 Database | Banco de dados em memória para testes     |
+| 📦 Maven       | Gerenciador de dependências               |
+| 🧬 Lombok       | Redução de boilerplate no Java            |
+| 🌐 API REST    | Comunicação padrão entre front e back-end |
+
+---
+
+## 🚀 Como rodar localmente
 
 ```bash
-# 1. Clone o repositório
-git clone https://github.com/seu-usuario/to-do-backend.git
-cd to-do-backend
+# Clone o projeto
+git clone https://github.com/seu-usuario/seu-repo.git
+cd seu-repo
 
-# 2. Importe o projeto na sua IDE (IntelliJ, VSCode, Eclipse...)
-
-# 3. Configure o application.properties
-# (ou application.yml para o Spring Boot)
-spring.datasource.url=jdbc:postgresql://localhost:5432/todo_db
-spring.datasource.username=seu_usuario
-spring.datasource.password=sua_senha
-
-# 4. Rode o projeto com Maven ou Gradle
+# Execute o projeto com Maven
+./mvnw spring-boot:run
