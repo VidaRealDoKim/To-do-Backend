@@ -2,7 +2,7 @@
 
 Projeto backend de uma aplicação **To-do List**, desenvolvido em **Java** durante o curso gratuito da [Rocketseat](https://www.rocketseat.com.br/).
 
-> 🚀 Curso focado em construir uma API RESTful com Java, boas práticas, organização de código e integração com banco de dados.
+> 🚀 Desenvolvimento de uma aplicação back-end em Java; Maven; Spring Boot; API Rest; Lombok; Integração com H2 Database Engine; Implementando segurança nos dados do usuário; Tratamento de Exceções e Deploy do back-end.
 
 ---
 
